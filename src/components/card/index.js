@@ -5,6 +5,7 @@ import './index.scss';
 class Card extends Component {
 
   render() {
+    const hasLabels = Boolean(this.props.card.labels.length)
     const labels = this.props.card.labels.map((_, i) => {
       return (<Label label={_} key={i}></Label>)
     })
@@ -17,9 +18,12 @@ class Card extends Component {
 
       <h1>{this.props.card.title}</h1>
 
-      <div className="card__labels">
-        {labels}
-      </div>
+      {hasLabels &&
+        (<div className="card__labels">
+          {labels}
+        </div>)
+      }
+
 
       <a className="card__btn" href={this.props.card.html_url} target="_blank" without rel="noopener noreferrer">visualizar</a>
 
