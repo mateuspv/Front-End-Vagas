@@ -4,10 +4,13 @@ import './index.scss';
 import Header from './structure/header';
 import JobList from './containers/joblist'
 
+import Search from './components/search'
+
 const app = (
   <div>
-    <Header></Header>
-    <JobList></JobList>
+    <Header />
+    <Search />
+    <JobList />
   </div>
 );
 
