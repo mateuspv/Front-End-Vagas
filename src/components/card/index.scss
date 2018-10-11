@@ -1,0 +1,47 @@
+.card {
+  background-color: var(--white);
+  padding: 0.5vw 1.5vw;
+  border-radius: var(--radius);
+
+
+  &__labels {
+    margin-top: 10px;
+  }
+
+  //
+  // Button
+  //
+  &__btn {
+    display: inline-block;
+    border-radius: var(--radius);
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: var(--blue);
+    color: var(--white);
+  }
+
+  //
+  // Avatar
+  //
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user__photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+  }
+
+  &__user__name {
+    margin-left: 5px;
+  }
+
+  //
+  // Labels
+  //
+  .label {
+    margin-right: 5px;
+  }
+}
