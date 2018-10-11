@@ -1,5 +1,8 @@
 .header {
+  padding-top: 1vw;
+  padding-bottom: 1vw;
   background-color: #fff;
   display: flex;
   justify-content: center;
+  border-bottom: 5px solid var(--yellow);
 }

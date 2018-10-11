@@ -1,3 +1,9 @@
+:root {
+  --green: #188726;
+  --yellow: #f4d000;
+  --blue: #317fdd;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,10 +13,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  background-color: #008810;
+  background-color: var(--green);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+img {
+  max-width: 100%;
 }
