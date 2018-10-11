@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
+import Header from './structure/header';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const app = (
+  <div>
+    <Header></Header>
+  </div>
+);
+
+ReactDOM.render(app, document.getElementById('root'));
