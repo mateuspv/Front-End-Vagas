@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import Header from './structure/header';
 import JobList from './containers/joblist'
+import Filters from './containers/filters/index'
 
-import Search from './components/search'
-
-const app = (
+const APP = (
   <div>
     <Header />
-    <Search />
+    <Filters />
     <JobList />
   </div>
 );
 
-ReactDOM.render(app, document.getElementById('root'));
+ReactDOM.render(APP, document.getElementById('root'));

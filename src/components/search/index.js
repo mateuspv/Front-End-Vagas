@@ -5,7 +5,7 @@ export default class Search extends Component {
   render() {
     return (
       <label className="search">
-        <input placeholder="Search" />
+        <input placeholder={this.props.placeholder} onKeyPress={this.props.onKeyPress} />
       </label>
     )
   }
