@@ -5,19 +5,20 @@ import './index.scss';
 class Card extends Component {
 
   render() {
-    const hasLabels = Boolean(this.props.card.labels.length)
-    const labels = this.props.card.labels.map((_, i) => {
+    const { card } = this.props;
+    const hasLabels = Boolean(card.labels.length);
+    const labels = card.labels.map((_, i) => {
       return (<Label label={_} key={i}></Label>)
     })
 
     return (<div className="card">
       <div className="card__content">
-        <a className="card__user" href={this.props.card.user.html_url} target="_blank" without rel="noopener noreferrer">
-          <img className="card__user__photo" src={this.props.card.user.avatar_url} alt={this.props.card.user.login} />
-          <p className="card__user__name">{this.props.card.user.login}</p>
+        <a className="card__user" href={card.user.html_url} target="_blank" rel="noopener noreferrer">
+          <img className="card__user__photo" src={card.user.avatar_url} alt={card.user.login} />
+          <p className="card__user__name">{card.user.login}</p>
         </a>
 
-        <h1>{this.props.card.title}</h1>
+        <h1>{card.title}</h1>
 
         {hasLabels &&
           (<div className="card__labels">
@@ -27,7 +28,7 @@ class Card extends Component {
 
       </div>
 
-      <a className="card__btn" href={this.props.card.html_url} target="_blank" without rel="noopener noreferrer">visualizar</a>
+      <a className="card__btn" href={card.html_url} target="_blank" rel="noopener noreferrer">visualizar</a>
 
 
     </div>)

@@ -1,16 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import { Provider } from 'react-redux'
+
 import Header from './structure/header';
 import JobList from './containers/joblist'
 import Filters from './containers/filters/index'
 
+
+import store from './state/store';
+import { fetchJobs } from './api';
+
+import './index.scss';
+
 const APP = (
-  <div>
-    <Header />
-    <Filters />
-    <JobList />
-  </div>
+  <Provider store={store}>
+    <>
+      <Header />
+      <Filters />
+      <JobList />
+    </>
+  </Provider>
 );
+
+
+fetchJobs().then(jobs => store.dispatch({ type: 'JOBS_ADD', jobs }))
 
 ReactDOM.render(APP, document.getElementById('root'));

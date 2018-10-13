@@ -1,33 +1,26 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { connect } from 'react-redux';
+
 import Card from '../components/card/index'
 
-// <Card card={cardData}></Card>
+const JobList = ({ jobs }) => {
+  const cards = jobs.map((_, i) => (<Card card={_} key={i}></Card>))
 
-class JobList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      jobs: []
-    };
-  }
-  componentDidMount() {
-    return window.fetch('https://api.github.com/repos/frontendbr/vagas/issues')
-      .then(_ => _.json())
-      .then(jobs => {
-        this.setState({ jobs })
-      })
-  }
-
-  render() {
-    const jobs = this.state.jobs.map((_, i) => (<Card card={_} key={i}></Card>))
-
-    return (
-      <div className="container">
-        {jobs}
-      </div>
-    )
-  }
+  return (
+    <div className="container">
+      {cards}
+    </div>
+  )
 }
 
-export default JobList;
+const mapStateToProps = (state, ownProps) => ({
+  jobs: state.jobsList
+})
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(JobList);
