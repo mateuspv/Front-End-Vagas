@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import Header from './structure/header';
 import JobList from './containers/joblist'
 import Filters from './containers/filters/index'
-
+import Forkme from './components/forkme/index'
 
 import store from './state/store';
 import { fetchJobs } from './api';
@@ -15,6 +15,7 @@ import './index.scss';
 const APP = (
   <Provider store={store}>
     <>
+      <Forkme />
       <Header />
       <Filters />
       <JobList />

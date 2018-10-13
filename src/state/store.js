@@ -1,12 +1,14 @@
 import { createStore } from 'redux';
 
+import hasTextQuery from '../helpers/hasTextQuery/index'
+
 const defaultData = {
   jobs: [],
   jobsList: []
 }
 
 const filterByText = (jobs, query) =>
-  query === "" ? jobs : jobs.filter(_ => _.title.indexOf(query) !== -1)
+  query === "" ? jobs : jobs.filter(_ => hasTextQuery(_.title, query))
 
 function reducer(state, action) {
   switch (action.type) {
