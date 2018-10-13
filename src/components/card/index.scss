@@ -12,8 +12,20 @@
     flex-grow: 1;
   }
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
   &__labels {
     margin-top: 10px;
+  }
+
+  &__time {
+    font-size: 12px;
+    font-style: italic;
   }
 
   //
@@ -35,7 +47,6 @@
   &__user {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
   }
 
   &__user__photo {
