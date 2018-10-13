@@ -1,4 +1,4 @@
-import timeStrFromDate from '../../helpers/timeStrFromDate'
+import prettyDate from '../../helpers/prettyDate/index'
 import React, { Component } from 'react'
 import Label from '../label';
 import './index.scss';
@@ -7,8 +7,9 @@ class Card extends Component {
 
   date(d) {
     const date = new Date(d)
-    return timeStrFromDate(date);
+    return prettyDate(date);
   }
+
   render() {
     const { card } = this.props;
     const date = this.date(card.created_at);
