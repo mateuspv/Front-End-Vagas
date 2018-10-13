@@ -6,7 +6,9 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <img src={logo} alt="front-end-brasil-logo"></img>
+        <a className="header__logo" href="https://github.com/frontendbr" target="_blank" rel="noopener noreferrer">
+          <img src={logo} alt="front-end-brasil-logo" />
+        </a>
       </header>
     )
   }
