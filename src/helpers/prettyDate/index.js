@@ -13,7 +13,6 @@ export default function prettyDate(date, fromTime) {
     return "agora";
   }
 
-
   if (diff < 120) {
     return "1 minuto atrás"
   }
