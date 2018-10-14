@@ -1,6 +1,7 @@
 import prettyDate from '../../helpers/prettyDate/index'
 import React, { Component } from 'react'
 import Label from '../label';
+import Techlogo from '../techlogo/index'
 import './index.scss';
 
 class Card extends Component {
@@ -13,7 +14,6 @@ class Card extends Component {
   render() {
     const { card } = this.props;
     const date = this.date(card.created_at);
-    const hasLabels = Boolean(card.labels.length);
     const labels = card.labels.map((_, i) => (<Label label={_} key={i}></Label>))
 
     return (<div className="card">
@@ -30,14 +30,12 @@ class Card extends Component {
         </div>
 
         <h1>{card.title}</h1>
+      </div>
 
+      <Techlogo text={`${card.title} ${card.body}`}></Techlogo>
 
-        {hasLabels &&
-          (<div className="card__labels">
-            {labels}
-          </div>)
-        }
-
+      <div className="card__labels">
+        {labels}
       </div>
 
       <a className="card__btn" href={card.html_url} target="_blank" rel="noopener noreferrer">visualizar</a>
