@@ -20,7 +20,7 @@ const Item = styled.li`
 export default (props) => {
   const technologies = identifyTechnologies(props.text)
     .map((name, i) => {
-      const icon = require(`../../assets/techlogos/icons/${name}.svg`);
+      const icon = require(`../../assets/techlogos/${name}.svg`);
 
       return (<Item key={i}>
         <img src={icon} alt={name} />
