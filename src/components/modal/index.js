@@ -39,25 +39,45 @@ const Wrapper = styled.div`
   padding: 50px;
   position: relative;
   z-index: 2;
-  background-color: var(--white)
+  max-height: 90vh;
+  overflow-x: auto;
+  background-color: var(--white);
+  border-radius: 4px;
 `
 
 const CloseButton = styled.button`
   position: absolute;
   right: 50px;
-  top: 25px;
-  width: 32px;
-  height: 32px;
+  top: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: var(--white);
+
+  :hover,
+  :focus,
+  :active {
+    outline: none;
+    box-shadow: var(--highlight-circle);
+    transition: 0.8s all;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
 `
 
 const Modal = (props) => (
   <Dialog className="modal" open={props.isVisible}>
     <Overlayer />
+
+    <CloseButton onClick={props.onCloseClick}>
+      <img src={IconClose} alt="close" />
+    </CloseButton>
+
     <div className="container">
       <Wrapper>
-        <CloseButton onClick={props.onCloseClick}>
-          <img src={IconClose} alt="close" />
-        </CloseButton>
         <div>
           {props.children}
         </div>

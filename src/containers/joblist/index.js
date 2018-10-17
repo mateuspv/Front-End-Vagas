@@ -1,8 +1,9 @@
 import React from 'react'
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import Card from '../../components/card/index'
 
-import styled from 'styled-components';
+import { renderMarkdown } from '../../api';
 
 const List = styled.div`
   display: grid;
@@ -38,7 +39,9 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onDetailClick(card) {
-    dispatch({ type: 'MODAL_DISPLAY', card })
+    renderMarkdown(card.body).then(_ => {
+      dispatch({ type: 'MODAL_DISPLAY', card: { ...card, bodyRendered: _ }, })
+    })
   }
 })
 
