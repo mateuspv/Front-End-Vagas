@@ -4,6 +4,16 @@ import styled from 'styled-components';
 const User = styled.a`
   display: flex;
   align-items: center;
+  transition: 0.8s all;
+
+  :hover {
+    color: var(--blue);
+    text-decoration: underline;
+  }
+
+  :hover img {
+    box-shadow: var(--highlight-circle);
+  }
 `
 
 const UserPhoto = styled.img`
@@ -13,9 +23,9 @@ const UserPhoto = styled.img`
 `
 
 const UserName = styled.p`
-  font-size: 14px;
+  font-size: var(--f-regular);
   font-style: italic;
-  margin-left: 5px;
+  margin-left: 10px;
 `
 
 export default ({ user }) => {

@@ -1,11 +1,18 @@
 :root {
   --white: #FFF;
+  --black: #1d2d35;
+  --gallery: #EEE;
   --green: #188726;
   --yellow: #f4d000;
   --blue: #317fdd;
   --gray: #5f6368;
-  --radius: 4px;
+  --radius: 100px;
   --container: 1366px;
+  --highlight-circle: 0 0 0 2px var(--white),0 0 0px 4px var(--blue);
+
+  --f-big: 32px;
+  --f-regular: 14px;
+  --f-small: 12px;
 }
 
 * {
@@ -20,7 +27,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('./assets/dark-pattern.png') center center fixed var(--green);  
+  background: url('./assets/dark-pattern.png') center center fixed var(--black);  
+  color: var(--black);
 }
 
 a {

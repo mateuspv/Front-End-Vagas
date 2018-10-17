@@ -5,8 +5,9 @@ const Container = styled.div`
   display: inline-block;
   padding: 5px 10px;
   border-radius: var(--radius);
-  font-size: 12px;
+  font-size: var(--f-small);
   font-style: italic;
+  text-align: center;
 `
 
 export default ({ label }) => (

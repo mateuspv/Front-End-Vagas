@@ -9,10 +9,10 @@ const Container = styled.div`
   margin: 50px auto 0 auto;
 `
 
-const Filters = (props) => (
+const Filters = ({ onChange }) => (
   <div className="container">
     <Container>
-      <Search onChange={value => this.props.onChange(value)} placeholder='Pesquisar' />
+      <Search onChange={value => onChange(value)} placeholder='Pesquisar' />
     </Container>
   </div>
 )

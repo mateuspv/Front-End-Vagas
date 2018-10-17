@@ -2,10 +2,13 @@ import React from 'react'
 import styled from 'styled-components';
 
 import prettyDate from '../../helpers/prettyDate/index'
+import identifyTechnologies from '../../helpers/identifyTechnologies/index';
+
 import Label from '../label';
 import Techlogo from '../techlogo/index'
 import User from './user'
 import Button from '../button'
+import HR from '../hr'
 
 const Container = styled.section`
   display: flex;
@@ -13,11 +16,15 @@ const Container = styled.section`
   flex-direction: column;
   padding: 30px;
   background-color: var(--white);
-  border-radius: var(--radius);
-  box-shadow: 0 1px 10px #00000085;
+  border-radius: 4px;
   animation-duration: 1s;
   animation-fill-mode: both;
   animation-name: fadeInUp;
+
+  &:hover {
+    box-shadow: var(--highlight-circle);
+    transition: .5s all;
+  }
 `
 
 const Content = styled.div`
@@ -33,29 +40,34 @@ const Header = styled.header`
 `
 
 const LabelsContainer = styled.div`
-  margin-top: 10px;
+  display: grid;
+  grid-gap: 5%;
+  grid-row-gap: 10px;
+  grid-template-columns: auto auto auto;
 
-  > div {
-    margin-right: 10px;
-  }
 `
 
 const Time = styled.time`
-  font-size: 12px;
+  font-size: var(--f-small);
   font-style: italic;
 `
 
-const Logos = styled.div`
-  ul {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
+const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+`
+
+const Title = styled.h1`
+  font-size: var(--f-big)
 `
 
 export default (props) => {
   const { card } = props;
   const date = prettyDate(new Date(card.created_at));
+  const technologies = identifyTechnologies(`${card.title} ${card.body}`)
+
   const Labels = card.labels.map((_, i) => (<Label label={_} key={i}></Label>))
+
 
   return (
     <Container>
@@ -65,18 +77,30 @@ export default (props) => {
           <Time>{date}</Time>
         </Header>
 
-        <h1>{card.title}</h1>
+        <Title>{card.title}</Title>
       </Content>
 
-      <Logos>
-        <Techlogo text={`${card.title} ${card.body}`}></Techlogo>
-      </Logos>
+      {technologies.length > 0 &&
+        <>
+          <HR />
+          <Techlogo technologies={technologies}></Techlogo>
+        </>
+      }
 
-      <LabelsContainer>
-        {Labels}
-      </LabelsContainer>
+      {card.labels.length > 0 &&
+        <>
+          <HR />
+          <LabelsContainer>
+            {Labels}
+          </LabelsContainer>
+        </>
+      }
 
-      <Button text="Detalhes" onClick={() => props.onDetailClick(props.card)} />
+      <HR />
+
+      <Footer>
+        <Button text="Detalhes" onClick={() => props.onDetailClick(props.card)} />
+      </Footer>
 
     </Container>
   )

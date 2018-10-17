@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 const LOGOS_PATH = './src/assets/techlogos/'
-const OUTPUT_PATH = './src/components/techlogo/identifyTechnologies/icons.json'
+const OUTPUT_PATH = './src/helpers/identifyTechnologies/icons.json'
 
 fs.readdir(LOGOS_PATH, (err, f) => {
   const files = f.map(_ => _.replace('.svg', ''))

@@ -9,14 +9,29 @@ const Label = style.label`
   padding: 15px;
   background: url(${SearchIcon}) no-repeat 97% center var(--white);
   background-size: 20px;
+
+  :focus,
+  :active {
+    outline: none;
+    box-shadow: var(--highlight-circle);
+    transition: 0.8s all;
+  }
 `
 
 const Input = style.input`
   display: block;
   width: 100%;
+  font-size: var(--f-small);
 
-  :focus {
+  :focus,
+  :active {
     outline: none;
+  }
+
+  ::-webkit-input-placeholder {
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 `
 

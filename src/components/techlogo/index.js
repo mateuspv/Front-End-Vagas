@@ -1,5 +1,4 @@
 import React from 'react'
-import identifyTechnologies from './identifyTechnologies/index';
 import styled from 'styled-components';
 
 const Container = styled.ul`
@@ -17,8 +16,8 @@ const Item = styled.li`
   margin-right: 10px;
 `
 
-export default (props) => {
-  const technologies = identifyTechnologies(props.text)
+export default ({ technologies }) => {
+  const Itens = technologies
     .map((name, i) => {
       const icon = require(`../../assets/techlogos/${name}.svg`);
 
@@ -27,6 +26,6 @@ export default (props) => {
       </Item>)
     })
 
-  return <Container>{technologies}</Container>
+  return <Container >{Itens}</Container>
 
 }
