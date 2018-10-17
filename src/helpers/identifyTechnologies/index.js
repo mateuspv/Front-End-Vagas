@@ -4,11 +4,11 @@ function unique(value, index, self) {
   return self.indexOf(value) === index;
 }
 
-
 export default function identifyTechnologies(text) {
-  return text
-    .split(' ')
-    .filter(_ => icons.includes(_.toLowerCase()))
-    .map(_ => _.toLowerCase())
+  const texts = text.toLowerCase().split(/[ |\n|\\|/]/).map(_ => _.trim())
+
+
+  return texts
+    .filter(_ => icons.includes(_))
     .filter(unique)
 }

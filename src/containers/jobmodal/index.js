@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 import Modal from '../../components/modal';
 import HR from '../../components/hr';
 import Button from '../../components/button';
+import IconGithub from '../../assets/icon-github.svg'
 
 const Footer = styled.footer`
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
   position: sticky;
   bottom: -50px;
@@ -19,19 +20,24 @@ const Footer = styled.footer`
 `
 
 const Text = styled.div`
-  h2 {
+  line-height: 1.6;
+  
+  h1,
+  h2,
+  h3,
+  h4 {
     font-size: var(--f-big);
-    margin-top: 25px;
-    margin-bottom: 25px;
 
     :first-chield {
       margin-top: 0
     }
   }
 
-  img {
-    margin: 0 auto 25px auto;
-  }
+ img {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+ }
 
   ul {
     margin-top: 15px;
@@ -43,19 +49,38 @@ const Text = styled.div`
   li {
     margin-top: 10px;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  img {
+    margin-bottom: 25px;
+  }
+
+  a {
+    text-decoration: underline;
+    :hover {
+      color: var(--blue);
+      text-decoration: underline;
+    }  
+  }
 `
 
-const JobModal = ({ modal: { isVisible, card }, onCloseClick }) => {
+const JobModal = ({ modal: { isVisible, card = { title: '', bodyRendered: '', html_url: '' } }, onCloseClick }) => {
   return (
     <Modal isVisible={isVisible} onCloseClick={onCloseClick}>
 
       <Text>
-        <div dangerouslySetInnerHTML={{ __html: (card.bodyRendered || '') }}></div>
+        <div dangerouslySetInnerHTML={{ __html: card.bodyRendered }}></div>
       </Text>
 
       <Footer>
         <HR />
-        <Button text="Ver" />
+        <a href={card.html_url} target="_blank" rel="noopener noreferrer">
+          <Button text="Ver" icon={IconGithub} alt="Github" />
+        </a>
       </Footer>
     </Modal>
   );

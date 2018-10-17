@@ -8,7 +8,12 @@ const Footer = styled.footer`
 `;
 
 const Link = styled.a`
-  color: var(--white)
+  color: var(--white);
+
+  :hover {
+    color: var(--blue);
+    text-decoration: underline;
+  }
 `
 
 const Love = styled.span`
@@ -17,7 +22,7 @@ const Love = styled.span`
 
 export default () => (
   <Footer>
-    <Link href="https://github.com/mateuspv" target="_blank" rel="noopener noreferrer">
+    <Link href="https://twitter.com/mateuspv" target="_blank" rel="noopener noreferrer">
       <span>Made with <Love>❤</Love> by mateus.vahl</span>
     </Link>
   </Footer>

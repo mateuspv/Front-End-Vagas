@@ -1,31 +1,17 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Container = styled.ul`
-  display: flex;
-  align-content: center;
-`
-
-const Item = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-`
-
 export default ({ technologies }) => {
+
   const Itens = technologies
     .map((name, i) => {
-      const icon = require(`../../assets/techlogos/${name}.svg`);
+      const icon = require(`./../../assets/techlogos/${name.trim()}.svg`);
 
-      return (<Item key={i}>
+      return (<li key={i}>
         <img src={icon} alt={name} />
-      </Item>)
+      </li>)
     })
 
-  return <Container >{Itens}</Container>
+  return <ul>{Itens}</ul>
 
 }

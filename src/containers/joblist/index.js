@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+
 import Card from '../../components/card/index'
+import Loader from '../../components/loader'
 
 import { renderMarkdown } from '../../api';
 
@@ -25,11 +27,17 @@ const JobList = ({ jobs, onDetailClick }) => {
   const Cards = jobs.map((_, i) => (<Card card={_} key={i} onDetailClick={onDetailClick}></Card>))
 
   return (
-    <div className="container">
-      <List>
-        {Cards}
-      </List>
-    </div>
+    <>
+      <div className="container">
+        <List>
+          {Cards}
+        </List>
+      </div>
+
+      <div className="container">
+        <Loader />
+      </div>
+    </>
   )
 }
 

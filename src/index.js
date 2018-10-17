@@ -27,6 +27,13 @@ const APP = (
 );
 
 
-fetchJobs().then(jobs => store.dispatch({ type: 'JOBS_ADD', jobs }))
+fetchJobs()
+  .then(jobs => {
+    if (jobs.message) {
+      return;
+    }
+
+    store.dispatch({ type: 'JOBS_ADD', jobs })
+  })
 
 ReactDOM.render(APP, document.getElementById('root'));

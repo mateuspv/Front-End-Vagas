@@ -5,7 +5,7 @@ import prettyDate from '../../helpers/prettyDate/index'
 import identifyTechnologies from '../../helpers/identifyTechnologies/index';
 
 import Label from '../label';
-import Techlogo from '../techlogo/index'
+import Logos from '../techlogo/index'
 import User from './user'
 import Button from '../button'
 import HR from '../hr'
@@ -32,10 +32,11 @@ const Content = styled.div`
 `
 
 const Header = styled.header`
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   color: var(--gray);
 `
 
@@ -57,6 +58,19 @@ const Footer = styled.footer`
   justify-content: center;
 `
 
+const LogosContainer = styled.div`
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+`
+
 const Title = styled.h1`
   font-size: var(--f-big)
 `
@@ -65,7 +79,6 @@ export default (props) => {
   const { card } = props;
   const date = prettyDate(new Date(card.created_at));
   const technologies = identifyTechnologies(`${card.title} ${card.body}`)
-
   const Labels = card.labels.map((_, i) => (<Label label={_} key={i}></Label>))
 
 
@@ -81,10 +94,10 @@ export default (props) => {
       </Content>
 
       {technologies.length > 0 &&
-        <>
+        <LogosContainer>
           <HR />
-          <Techlogo technologies={technologies}></Techlogo>
-        </>
+          <Logos technologies={technologies}></Logos>
+        </LogosContainer>
       }
 
       {card.labels.length > 0 &&

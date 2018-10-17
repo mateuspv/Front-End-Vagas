@@ -88,4 +88,8 @@ dialog {
   margin-right: auto;
   padding-left: 3%;
   padding-right: 3%;
+
+  > *  {
+    flex-grow: 1
+  }
 }
