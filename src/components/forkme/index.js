@@ -1,6 +1,7 @@
 import React from 'react';
-import octodex from './icon-octodex.svg'
 import style from 'styled-components';
+
+import octodex from './icon-octodex.svg'
 
 const Link = style.a`
   position: absolute;
@@ -9,10 +10,8 @@ const Link = style.a`
 
 const title = "forke me on github";
 
-const Forkme = () => (
+export default () => (
   <Link href="https://github.com/" target="_blank" rel="noopener noreferrer">
     <img src={octodex} alt={title} title={title} />
   </Link>
 )
-
-export default Forkme

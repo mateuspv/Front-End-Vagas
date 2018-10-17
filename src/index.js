@@ -10,7 +10,7 @@ import Forkme from './components/forkme/index'
 import store from './state/store';
 import { fetchJobs } from './api';
 
-import './index.scss';
+import './scaffold.scss';
 
 const APP = (
   <Provider store={store}>
