@@ -9,7 +9,7 @@ const List = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 3%;
   grid-row-gap: 25px;
-  padding: 100px 0;
+  padding-top: 100px;
 
   @media (min-width: 980px) {
     grid-template-columns: 1fr 1fr;

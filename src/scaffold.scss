@@ -6,7 +6,7 @@
   --gray: #5f6368;
   --radius: 4px;
   --bg: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEUlEQVQIW2NgYGD4z4AE/gMADwMB/3hb+igAAAAASUVORK5CYII=');
-
+  --container: 1366px;
 }
 
 * {
@@ -71,7 +71,7 @@ ul {
 }
 
 .container {
-  max-width: 1366px;
+  max-width: var(--container);
   margin-left: auto;
   margin-right: auto;
   padding-left: 3%;

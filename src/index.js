@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 
 import Header from './structure/header';
+import Footer from './structure/footer';
 import JobList from './containers/joblist/index'
 import Modal from './containers/jobmodal/index';
 import Filters from './containers/filters/index'
@@ -20,6 +21,7 @@ const APP = (
       <Filters />
       <JobList />
       <Modal />
+      <Footer />
     </>
   </Provider>
 );
