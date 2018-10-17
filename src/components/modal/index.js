@@ -19,6 +19,10 @@ const Dialog = styled.dialog`
   :not([open]) {
     display: none;
   }
+
+  .container {
+    flex-grow: 1;
+  }
 `;
 
 const Overlayer = styled.div`
@@ -30,30 +34,34 @@ const Overlayer = styled.div`
   background: var(--bg);
 `;
 
-const Content = styled.div`
+const Wrapper = styled.div`
+  padding: 50px;
   position: relative;
-    z-index: 2;
-    background-color: var(--white)
+  z-index: 2;
+  background-color: var(--white)
 `
 
 const CloseButton = styled.button`
-  width: 30px;
-  height: 30px;
+  position: absolute;
+  right: 50px;
+  top: 25px;
+  width: 32px;
+  height: 32px;
 `
 
 const Modal = (props) => (
   <Dialog className="modal" open={props.isVisible}>
     <Overlayer />
-    <Content>
-      <div className="container">
+    <div className="container">
+      <Wrapper>
         <CloseButton onClick={props.onCloseClick}>
           <img src={IconClose} alt="close" />
         </CloseButton>
         <div>
           {props.children}
         </div>
-      </div>
-    </Content>
+      </Wrapper>
+    </div>
   </Dialog>
 )
 
