@@ -35,6 +35,6 @@ const reducer = (state, action) => {
   }
 }
 
-let store = createStore(reducer, defaultData);
+let store = createStore(reducer, defaultData, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default store;
