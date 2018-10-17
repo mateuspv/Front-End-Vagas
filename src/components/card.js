@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import prettyDate from '../../helpers/prettyDate/index'
-import identifyTechnologies from '../../helpers/identifyTechnologies/index';
+import prettyDate from '../helpers/prettyDate/index'
+import identifyTechnologies from '../helpers/identifyTechnologies/index';
 
-import Label from '../label';
-import Logos from '../techlogo/index'
+import Label from './label';
+import Logos from './techlogo'
 import User from './user'
-import Button from '../button'
-import HR from '../hr'
+import Button from './button'
+import HR from './hr'
 
 const Container = styled.section`
   display: flex;

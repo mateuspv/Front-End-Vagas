@@ -4,10 +4,13 @@ import { Provider } from 'react-redux'
 
 import Header from './structure/header';
 import Footer from './structure/footer';
-import JobList from './containers/joblist/index'
-import Modal from './containers/jobmodal/index';
-import Filters from './containers/filters/index'
-import Forkme from './components/forkme/index'
+
+import JobList from './containers/joblist'
+import Modal from './containers/jobmodal';
+import Filters from './containers/filters'
+
+import Forkme from './components/forkme'
+
 import store from './state/store';
 import { fetchJobs } from './api';
 

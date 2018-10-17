@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import BackgroundPattern from '../../assets/flick-pattern.png';
-import IconClose from '../../assets/icon-close.svg';
+import BackgroundPattern from '../assets/flick-pattern.png';
+import IconClose from '../assets/icon-close.svg';
 
 const Dialog = styled.dialog`
   position: fixed;

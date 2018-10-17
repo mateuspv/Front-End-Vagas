@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-import Card from '../../components/card/index'
-import Loader from '../../components/loader'
+import Card from '../components/card'
+import Loader from '../components/loader'
 
-import { renderMarkdown } from '../../api';
+import { renderMarkdown } from '../api';
 
 const List = styled.div`
   display: grid;

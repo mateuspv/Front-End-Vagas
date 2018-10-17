@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-import Modal from '../../components/modal';
-import HR from '../../components/hr';
-import Button from '../../components/button';
-import IconGithub from '../../assets/icon-github.svg'
+import Modal from '../components/modal';
+import HR from '../components/hr';
+import Button from '../components/button';
+import IconGithub from '../assets/icon-github.svg'
 
 const Footer = styled.footer`
   display: flex;

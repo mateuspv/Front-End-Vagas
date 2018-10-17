@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-import Search from '../../components/search';
+import Search from '../components/search';
 
 const Container = styled.div`
   max-width: 768px;

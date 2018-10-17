@@ -1,7 +1,7 @@
 import React from 'react'
 import style from 'styled-components';
 
-import SearchIcon from '../../assets/icon-search.svg';
+import SearchIcon from '../assets/icon-search.svg';
 
 const Label = style.label`
   display: block;
