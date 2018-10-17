@@ -48,6 +48,7 @@
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
+    "styled-components": "^4.0.0",
     "terser-webpack-plugin": "1.1.0",
     "url-loader": "1.1.1",
     "webpack": "4.19.1",
@@ -109,6 +110,12 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      "babel-plugin-styled-components"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.8.0"
   }
 }

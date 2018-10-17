@@ -1,22 +1,32 @@
-import React, { Component } from 'react'
+import React from 'react'
 import identifyTechnologies from './identifyTechnologies/index';
-import './index.scss';
+import styled from 'styled-components';
 
-class Techlogo extends Component {
-  render() {
-    const technologies = identifyTechnologies(this.props.text)
-      .map((_, i) => {
-        const path = require(`./icons/${_}.svg`);
+const Container = styled.ul`
+  display: flex;
+  align-content: center;
+`
 
-        return (
-          <li className="techlogos__item">
-            <img src={path} alt={_} key={i} />
-          </li>
-        )
-      })
+const Item = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    return (<ul class="techlogos">{technologies}</ul>)
-  }
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+`
+
+export default (props) => {
+  const technologies = identifyTechnologies(props.text)
+    .map((name, i) => {
+      const icon = require(`./icons/${name}.svg`);
+
+      return (<Item key={i}>
+        <img src={icon} alt={name} />
+      </Item>)
+    })
+
+  return <Container>{technologies}</Container>
+
 }
-
-export default Techlogo;

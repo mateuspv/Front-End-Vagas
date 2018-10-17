@@ -1,14 +1,16 @@
-import React, { Component } from 'react'
-import './index.scss';
+import React from 'react'
+import styled from 'styled-components'
 
-class Label extends Component {
-  render() {
+const Container = styled.div`
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-style: italic;
+`
 
-    return (
-      <div className="label" style={{ 'background': `#${this.props.label.color}` }}>
-        {this.props.label.name}
-      </div>)
-  }
-}
-
-export default Label;
+export default ({ label }) => (
+  <Container style={{ 'background': `#${label.color}` }}>
+    {label.name}
+  </Container>
+);

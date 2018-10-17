@@ -1,24 +1,28 @@
-import React, { Component } from 'react'
-import './index.scss';
+import React from 'react'
+import style from 'styled-components';
 
-export default class Search extends Component {
-  state = {
-    value: ""
-  };
+import SearchIcon from './icon-search.svg';
 
-  updateInputValue(event) {
-    this.setState({
-      value: event.target.value
-    });
+const Label = style.label`
+  display: block;
+  border-radius: var(--radius);
+  padding: 15px;
+  background: url(${SearchIcon}) no-repeat 97% center var(--white);
+  background-size: 20px;
+`
 
-    this.props.onChange(this.state.value);
+const Input = style.input`
+  display: block;
+  width: 100%;
+
+  :focus {
+    outline: none;
   }
+`
 
-  render() {
-    return (
-      <label className="search">
-        <input placeholder={this.props.placeholder} value={this.state.value} onKeyPress={event => this.updateInputValue(event)} onChange={event => this.updateInputValue(event)} />
-      </label>
-    )
-  }
+export default (props) => {
+  return <Label >
+    <Input placeholder={props.placeholder} value={props.value} onChange={e => props.onChange(e.target.value)} />
+  </Label>
+
 }

@@ -1,48 +1,83 @@
+import React from 'react'
+import styled from 'styled-components';
+
 import prettyDate from '../../helpers/prettyDate/index'
-import React, { Component } from 'react'
 import Label from '../label';
 import Techlogo from '../techlogo/index'
-import './index.scss';
+import User from './user'
+import Button from '../button'
 
-class Card extends Component {
+const Container = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 30px;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 10px #00000085;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+`
 
-  date(d) {
-    const date = new Date(d)
-    return prettyDate(date);
+const Content = styled.div`
+  flex-grow: 1;
+`
+
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: var(--gray);
+`
+
+const LabelsContainer = styled.div`
+  margin-top: 10px;
+
+  > div {
+    margin-right: 10px;
   }
+`
 
-  render() {
-    const { card } = this.props;
-    const date = this.date(card.created_at);
-    const labels = card.labels.map((_, i) => (<Label label={_} key={i}></Label>))
+const Time = styled.time`
+  font-size: 12px;
+  font-style: italic;
+`
 
-    return (<div className="card">
-      <div className="card__content">
+const Logos = styled.div`
+  ul {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+`
 
+export default (props) => {
+  const { card } = props;
+  const date = prettyDate(new Date(card.created_at));
+  const Labels = card.labels.map((_, i) => (<Label label={_} key={i}></Label>))
 
-        <div className="card__header">
-          <a className="card__user" href={card.user.html_url} target="_blank" rel="noopener noreferrer">
-            <img className="card__user__photo" src={card.user.avatar_url} alt={card.user.login} />
-            <p className="card__user__name">{card.user.login}</p>
-          </a>
-
-          <time className="card__time">{date}</time>
-        </div>
+  return (
+    <Container>
+      <Content>
+        <Header>
+          <User user={card.user} />
+          <Time>{date}</Time>
+        </Header>
 
         <h1>{card.title}</h1>
-      </div>
+      </Content>
 
-      <Techlogo text={`${card.title} ${card.body}`}></Techlogo>
+      <Logos>
+        <Techlogo text={`${card.title} ${card.body}`}></Techlogo>
+      </Logos>
 
-      <div className="card__labels">
-        {labels}
-      </div>
+      <LabelsContainer>
+        {Labels}
+      </LabelsContainer>
 
-      <a className="card__btn" href={card.html_url} target="_blank" rel="noopener noreferrer">visualizar</a>
+      <Button text="Detalhes" onClick={() => props.onDetailClick(props.card)} />
 
-
-    </div>)
-  }
+    </Container>
+  )
 }
-
-export default Card;

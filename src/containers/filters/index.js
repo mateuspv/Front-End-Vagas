@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import Search from '../../components/search';
 
-import './index.scss';
+const Container = styled.div`
+  max-width: 768px;
+  margin: 50px auto 0 auto;
+`
 
-class Filters extends Component {
-  render() {
-    return (
-      <div className="filters">
-        <Search onChange={value => this.props.onChange(value)} placeholder='Pesquisar' />
-      </div>
-    )
-  }
-}
+const Filters = (props) => (
+  <div className="container">
+    <Container>
+      <Search onChange={value => this.props.onChange(value)} placeholder='Pesquisar' />
+    </Container>
+  </div>
+)
 
-
-const mapStateToProps = (state, ownProps) => ({
-
-})
+const mapStateToProps = (state, ownProps) => ({})
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onChange(query) {
