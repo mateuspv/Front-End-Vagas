@@ -60,7 +60,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "icons": "node ./src/components/techlogo/identifyTechnologies/create-json.js"
+    "icons": "node scripts/create-icons-json.js"
   },
   "eslintConfig": {
     "extends": "react-app"

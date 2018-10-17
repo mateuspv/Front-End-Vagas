@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react'
-import IconClose from './close.svg';
+import BackgroundPattern from '../../assets/flick-pattern.png';
+import IconClose from '../../assets/icon-close.svg';
 
 const Dialog = styled.dialog`
   position: fixed;
@@ -31,7 +32,7 @@ const Overlayer = styled.div`
   height: 100%;
   left: 0;
   top: 0;
-  background: var(--bg);
+  background: url('${BackgroundPattern}');
 `;
 
 const Wrapper = styled.div`

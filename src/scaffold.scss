@@ -5,7 +5,6 @@
   --blue: #317fdd;
   --gray: #5f6368;
   --radius: 4px;
-  --bg: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEUlEQVQIW2NgYGD4z4AE/gMADwMB/3hb+igAAAAASUVORK5CYII=');
   --container: 1366px;
 }
 
@@ -21,7 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--bg) center center fixed var(--green);  
+  background: var('./assets/dark-pattern.png') center center fixed var(--green);  
 }
 
 a {

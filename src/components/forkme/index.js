@@ -1,7 +1,7 @@
 import React from 'react';
 import style from 'styled-components';
 
-import octodex from './icon-octodex.svg'
+import octodex from '../../assets/icon-octodex.svg'
 
 const Link = style.a`
   position: absolute;
