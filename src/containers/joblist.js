@@ -5,7 +5,12 @@ import { connect } from 'react-redux';
 import Card from '../components/card'
 import Loader from '../components/loader'
 
-import { renderMarkdown } from '../api';
+import { SHOW_JOB_MODAL } from '../state/actions';
+import hasTextQuery from '../helpers/hasTextQuery/index'
+
+const filterByText = (jobs, query) =>
+  query === "" ? jobs : jobs.filter(_ => hasTextQuery(_.title, query))
+
 
 const List = styled.div`
   display: grid;
@@ -23,7 +28,7 @@ const List = styled.div`
   }
 `
 
-const JobList = ({ jobs, onDetailClick }) => {
+const JobList = ({ jobs, isLoading, onDetailClick }) => {
   const Cards = jobs.map((_, i) => (<Card card={_} key={i} onDetailClick={onDetailClick}></Card>))
 
   return (
@@ -35,21 +40,20 @@ const JobList = ({ jobs, onDetailClick }) => {
       </div>
 
       <div className="container">
-        <Loader />
+        <Loader visible={isLoading} />
       </div>
     </>
   )
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  jobs: state.jobsList
+  jobs: filterByText(state.jobs, state.query),
+  isLoading: state.isLoading
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onDetailClick(card) {
-    renderMarkdown(card.body).then(_ => {
-      dispatch({ type: 'MODAL_DISPLAY', card: { ...card, bodyRendered: _ }, })
-    })
+    SHOW_JOB_MODAL(card)
   }
 })
 

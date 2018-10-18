@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
+import { HIDE_JOB_MODAL } from '../state/actions'
+
 import Modal from '../components/modal';
 import HR from '../components/hr';
 import Button from '../components/button';
@@ -92,7 +94,7 @@ const mapStateToProps = ({ modal }, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onCloseClick() {
-    dispatch({ type: 'MODAL_CLOSE' })
+    HIDE_JOB_MODAL()
   }
 })
 

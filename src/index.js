@@ -12,7 +12,7 @@ import Filters from './containers/filters'
 import Forkme from './components/forkme'
 
 import store from './state/store';
-import { fetchJobs } from './api';
+import { GET_JOBS } from './state/actions'
 
 import './scaffold.scss';
 
@@ -29,14 +29,6 @@ const APP = (
   </Provider>
 );
 
-
-fetchJobs()
-  .then(jobs => {
-    if (jobs.message) {
-      return;
-    }
-
-    store.dispatch({ type: 'JOBS_ADD', jobs })
-  })
+GET_JOBS()
 
 ReactDOM.render(APP, document.getElementById('root'));
