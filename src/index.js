@@ -1,20 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 
-import Header from './structure/header';
-import Footer from './structure/footer';
+import Header from "./structure/header";
+import Footer from "./structure/footer";
 
-import JobList from './containers/joblist'
-import Modal from './containers/jobmodal';
-import Filters from './containers/filters'
+import JobList from "./containers/joblist";
+import Modal from "./containers/jobmodal";
+import Filters from "./containers/filters";
 
-import Forkme from './components/forkme'
+import Forkme from "./components/forkme";
 
-import store from './state/store';
-import { GET_JOBS } from './state/actions'
+import store from "./state/store";
+import { GET_JOBS } from "./state/actions";
 
-import './scaffold.scss';
+import "./scaffold.scss";
 
 const APP = (
   <Provider store={store}>
@@ -29,6 +29,6 @@ const APP = (
   </Provider>
 );
 
-GET_JOBS()
+GET_JOBS();
 
-ReactDOM.render(APP, document.getElementById('root'));
+ReactDOM.render(APP, document.getElementById("root"));
