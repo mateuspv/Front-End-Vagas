@@ -56,11 +56,28 @@
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "3.6.2"
   },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.8.0",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "prettier": "1.14.3"
+  },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "icons": "node scripts/create-icons-json.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -114,8 +131,5 @@
     "plugins": [
       "babel-plugin-styled-components"
     ]
-  },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^1.8.0"
   }
 }
