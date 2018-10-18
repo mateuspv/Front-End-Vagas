@@ -1,14 +1,14 @@
 :root {
-  --white: #FFF;
+  --white: #fff;
   --black: #1d2d35;
-  --gallery: #EEE;
+  --gallery: #eee;
   --green: #188726;
   --yellow: #f4d000;
   --blue: #317fdd;
   --gray: #5f6368;
   --radius: 100px;
   --container: 1366px;
-  --highlight-circle: 0 0 0 2px var(--white),0 0 0px 4px var(--blue);
+  --highlight-circle: 0 0 0 2px var(--white), 0 0 0px 4px var(--blue);
 
   --f-big: 32px;
   --f-regular: 14px;
@@ -27,7 +27,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('./assets/dark-pattern.png') center center fixed var(--black);  
+  background: url("./assets/dark-pattern.png") center center fixed var(--black);
   color: var(--black);
 }
 
@@ -89,7 +89,7 @@ dialog {
   padding-left: 3%;
   padding-right: 3%;
 
-  > *  {
-    flex-grow: 1
+  > * {
+    flex-grow: 1;
   }
 }

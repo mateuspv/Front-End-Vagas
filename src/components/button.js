@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Button = styled.button`
   display: flex;
@@ -24,16 +24,14 @@ const Button = styled.button`
 
   img {
     max-width: 25px;
-    margin-left: 15px
+    margin-left: 15px;
   }
 `;
 
-export default (props) => (
+export default props => (
   <Button onClick={props.onClick}>
     <span>{props.text}</span>
 
-    {props.icon &&
-      <img className="svg" src={props.icon} alt={props.alt} />
-    }
+    {props.icon && <img className="svg" src={props.icon} alt={props.alt} />}
   </Button>
-)
+);

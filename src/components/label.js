@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: inline-block;
@@ -8,10 +8,8 @@ const Container = styled.div`
   font-size: var(--f-small);
   font-style: italic;
   text-align: center;
-`
+`;
 
 export default ({ label }) => (
-  <Container style={{ 'background': `#${label.color}` }}>
-    {label.name}
-  </Container>
+  <Container style={{ background: `#${label.color}` }}>{label.name}</Container>
 );

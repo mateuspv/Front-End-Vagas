@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const HR = styled.div`
   margin-top: 20px;
@@ -7,6 +7,6 @@ const HR = styled.div`
   border-top: 1px solid var(--gallery);
   width: 100%;
   height: 1px;
-`
+`;
 
-export default () => <HR />
+export default () => <HR />;

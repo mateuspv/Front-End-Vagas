@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
 
-import { HIDE_JOB_MODAL } from '../state/actions'
+import { HIDE_JOB_MODAL } from "../state/actions";
 
-import Modal from '../components/modal';
-import HR from '../components/hr';
-import Button from '../components/button';
-import IconGithub from '../assets/icon-github.svg'
+import Modal from "../components/modal";
+import HR from "../components/hr";
+import Button from "../components/button";
+import IconGithub from "../assets/icon-github.svg";
 
 const Footer = styled.footer`
   display: flex;
@@ -19,11 +19,11 @@ const Footer = styled.footer`
   left: 0;
   background: var(--white);
   padding-bottom: 50px;
-`
+`;
 
 const Text = styled.div`
   line-height: 1.6;
-  
+
   h1,
   h2,
   h3,
@@ -31,15 +31,15 @@ const Text = styled.div`
     font-size: var(--f-big);
 
     :first-chield {
-      margin-top: 0
+      margin-top: 0;
     }
   }
 
- img {
-  display: block;
-  text-align: center;
-  margin: 0 auto;
- }
+  img {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
 
   ul {
     margin-top: 15px;
@@ -66,16 +66,18 @@ const Text = styled.div`
     :hover {
       color: var(--blue);
       text-decoration: underline;
-    }  
+    }
   }
-`
+`;
 
-const JobModal = ({ modal: { isVisible, card = { title: '', bodyRendered: '', html_url: '' } }, onCloseClick }) => {
+const JobModal = ({
+  modal: { isVisible, card = { title: "", bodyRendered: "", html_url: "" } },
+  onCloseClick
+}) => {
   return (
     <Modal isVisible={isVisible} onCloseClick={onCloseClick}>
-
       <Text>
-        <div dangerouslySetInnerHTML={{ __html: card.bodyRendered }}></div>
+        <div dangerouslySetInnerHTML={{ __html: card.bodyRendered }} />
       </Text>
 
       <Footer>
@@ -86,16 +88,19 @@ const JobModal = ({ modal: { isVisible, card = { title: '', bodyRendered: '', ht
       </Footer>
     </Modal>
   );
-}
+};
 
 const mapStateToProps = ({ modal }, ownProps) => ({
   modal
-})
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onCloseClick() {
-    HIDE_JOB_MODAL()
+    HIDE_JOB_MODAL();
   }
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(JobModal);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(JobModal);

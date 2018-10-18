@@ -1,16 +1,15 @@
-import React from 'react'
+import React from "react";
 
 export default ({ technologies }) => {
+  const Itens = technologies.map((name, i) => {
+    const icon = require(`./../assets/techlogos/${name.trim()}.svg`);
 
-  const Itens = technologies
-    .map((name, i) => {
-      const icon = require(`./../assets/techlogos/${name.trim()}.svg`);
-
-      return (<li key={i}>
+    return (
+      <li key={i}>
         <img src={icon} alt={name} />
-      </li>)
-    })
+      </li>
+    );
+  });
 
-  return <ul>{Itens}</ul>
-
-}
+  return <ul>{Itens}</ul>;
+};

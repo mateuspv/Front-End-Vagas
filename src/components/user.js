@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const User = styled.a`
   display: grid;
@@ -16,20 +16,22 @@ const User = styled.a`
   :hover img {
     box-shadow: var(--highlight-circle);
   }
-`
+`;
 
 const UserPhoto = styled.img`
   border-radius: 100%;
-`
+`;
 
 const UserName = styled.p`
   font-size: var(--f-regular);
   font-style: italic;
-`
+`;
 
 export default ({ user }) => {
-  return <User href={user.html_url} target="_blank" rel="noopener noreferrer">
-    <UserPhoto src={user.avatar_url} alt={user.login} />
-    <UserName className="card__user__name">{user.login}</UserName>
-  </User>
-}
+  return (
+    <User href={user.html_url} target="_blank" rel="noopener noreferrer">
+      <UserPhoto src={user.avatar_url} alt={user.login} />
+      <UserName className="card__user__name">{user.login}</UserName>
+    </User>
+  );
+};

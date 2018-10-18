@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import BackgroundPattern from '../assets/flick-pattern.png';
-import IconClose from '../assets/icon-close.svg';
+import BackgroundPattern from "../assets/flick-pattern.png";
+import IconClose from "../assets/icon-close.svg";
 
 const Dialog = styled.dialog`
   position: fixed;
@@ -47,7 +47,7 @@ const Wrapper = styled.div`
   overflow-x: auto;
   background-color: var(--white);
   border-radius: 4px;
-`
+`;
 
 const CloseButton = styled.button`
   position: absolute;
@@ -70,9 +70,9 @@ const CloseButton = styled.button`
     width: 32px;
     height: 32px;
   }
-`
+`;
 
-const Modal = (props) => (
+const Modal = props => (
   <Dialog className="modal" open={props.isVisible}>
     <Overlayer />
 
@@ -82,12 +82,10 @@ const Modal = (props) => (
 
     <div className="container">
       <Wrapper>
-        <div>
-          {props.children}
-        </div>
+        <div>{props.children}</div>
       </Wrapper>
     </div>
   </Dialog>
-)
+);
 
 export default Modal;

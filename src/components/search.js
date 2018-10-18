@@ -1,7 +1,7 @@
-import React from 'react'
-import style from 'styled-components';
+import React from "react";
+import style from "styled-components";
 
-import SearchIcon from '../assets/icon-search.svg';
+import SearchIcon from "../assets/icon-search.svg";
 
 const Label = style.label`
   display: block;
@@ -16,7 +16,7 @@ const Label = style.label`
     box-shadow: var(--highlight-circle);
     transition: 0.8s all;
   }
-`
+`;
 
 const Input = style.input`
   display: block;
@@ -33,11 +33,16 @@ const Input = style.input`
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-`
+`;
 
-export default (props) => {
-  return <Label >
-    <Input placeholder={props.placeholder} value={props.value} onChange={e => props.onChange(e.target.value)} />
-  </Label>
-
-}
+export default props => {
+  return (
+    <Label>
+      <Input
+        placeholder={props.placeholder}
+        value={props.value}
+        onChange={e => props.onChange(e.target.value)}
+      />
+    </Label>
+  );
+};
