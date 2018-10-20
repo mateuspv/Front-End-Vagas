@@ -19,7 +19,10 @@ import "./scaffold.scss";
 const APP = (
   <Provider store={store}>
     <>
-      <Forkme />
+      <Forkme
+        href="https://github.com/mateuspv/frontend-vagas"
+        title="forke me on github"
+      />
       <Header />
       <Filters />
       <JobList />

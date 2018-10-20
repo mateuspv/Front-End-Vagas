@@ -8,10 +8,8 @@ const Link = style.a`
   right: 0;
 `;
 
-const title = "forke me on github";
-
-export default () => (
-  <Link href="https://github.com/" target="_blank" rel="noopener noreferrer">
+export default ({ href, title }) => (
+  <Link href={href} target="_blank" rel="noopener noreferrer">
     <img src={octodex} alt={title} title={title} />
   </Link>
 );
