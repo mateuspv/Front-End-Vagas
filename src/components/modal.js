@@ -51,12 +51,14 @@ const Wrapper = styled.div`
 
 const CloseButton = styled.button`
   position: absolute;
+  z-index: 9090;
   right: 50px;
   top: 50px;
   width: 80px;
   height: 80px;
   border-radius: 100%;
   background: var(--white);
+  box-shadow: var(--shadow);
 
   :hover,
   :focus,
